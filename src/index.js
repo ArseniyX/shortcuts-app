@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 
 // third party
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
 // project imports
@@ -10,14 +10,15 @@ import App from "App";
 import { store } from "store";
 import { CssBaseline } from "@mui/material";
 
+import "assets/scss/style.scss";
+
 // ==============================|| REACT DOM RENDER  ||============================== //
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <CssBaseline />
+    <Router basename={process.env.PUBLIC_URL}>
       <App />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
